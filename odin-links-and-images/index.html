@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links and Images</title>
+</head>
+<body>
+    <h1>Homepage</h1>
+    <!-- Links in HTML us an Anchor element <a></a> -->
+    <p><a>About The Odin Project</a></p> <!--This doesn't actually go anywhere without the attributes-->
+    <!-- hfre stands for hypertext reference -->
+    <p></p><a href="https://www.theodinproject.com/about">This is the actual Link</a></p>
+    <p></p><a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">This opens a link in a new tab or window</a></p>
+    <!-- rel describes the relationship between the current page and the linked document
+       noopener value ensures that newly opened window cannot interact with or access the original page. Without it, the new page can use JavaScript to manipulate the original page, which poses a security risk. 
+       noreferrer value provides privacy and security. it provides the behavior of noopener while also preventing the new page from knowing where the user came from-->
+       
+    <!-- using rel="noreferrer" you get both benefits -->
+    <!-- This prevents a type of phising attack called Tabnabbing -->
+    <p></p><A href="./pages/about.html">About</A></p>
+
+    <!-- defining the img size prevents content jumping as images load. -->
+    <img src="https://www.theodinproject.com/mstile-310x310.png" alt="The Odin Project Logo" height="310" width="310">
+    <img src="./images/resource_density.jpg" alt="What happens to the educational resources when you begin learning a technical skill" height="752" width="726">
+
+</body>
+</html>
