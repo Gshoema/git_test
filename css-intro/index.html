@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Introduction</title>
+</head>
+<body>
+    <h1>CSS Intro and Practice</h1>
+    <p>This is my way of following along with <a href="https://www.theodinproject.com/lessons/foundations-intro-to-css#semantic-html" 
+        target="_blank" rel="noreferrer">
+        The Odin Project's CSS Intro</a>. This is a reference to my knowledge level at the 
+        very beginning of this lesson.
+    </p>
+    <h4>Syntax</h4>
+    <img src="img/css-syntax.jpg">
+    <h4>Universal Selector</h4>
+    * {
+        color: purple;
+    }
+
+    <h4>Type Selectors (AKA Element Selectors)</h4>
+    &lt;!-- index.html --&gt;
+
+    <div>Hello, World!</div>
+    <div>Hello again!</div>
+    <p>Hi...</p>
+    <div>Okay, bye.</div>
+
+    <p>/* styles.css */
+    div {
+        color: white;
+    }</p>
+    <p>Type (Element) Selectors apply to all html elements of a known type. 
+        In this case all the 'div' type elements will be effected, and not the 'p' type elements.
+    </p>
+
+    <h4>Class Selectors</h4>
+    &lt;!-- index.html --&gt;
+
+    <div class="alert-text">Please agree to our terms of service.</div>
+
+    <p>/* styles.css */
+    .alert-text{
+        color: red;
+    }</p>
+    <p>The Class Selector will select all elements with a given class. A class is an 
+        attribute you place on an html element (alert-text). The syntax for class Selectors
+        and all selectors cannot be named with a leading number. For example 4lert-text 
+        would fail in the scenario above.
+    </p>
+    <p>another thing with class attributes is that you can add multiple classes to a single
+        element. class="alert-text severe-alert" is totally legal syntax. This also shows
+        that whitespace is used in ways to separate classes and you should always give names
+        a hyphen instead of spaces.
+    </p>
+
+    <h4>ID Selectors</h4>
+    &lt;!-- index.html --&gt;
+    <div id="title">My Awesome 90's Page</div>
+
+    /* styles.css */
+    #title{
+        background-color: red;
+    }
+
+    <p>Instead of a period, ID's use a hashtag. It is a common pitfall to use the ID attribute
+        when classes will suffice. ID's should be used sparingly and for specific use cases
+        such as links redirecting to a section on the current page, or taking advantage of
+        specificity. Leading Digits are also illegal with ID syntax.
+    </p>
+
+    <h4>Grouping Selectors</h4>
+    .read {
+    color: white;
+    background-color: black;
+    /* several unique declarations */
+    }
+
+    .unread {
+    color: white;
+    background-color: black;
+    /* several unique declarations */
+    }
+    <p>both .read and .unread share color and background-color selectors. These can be 
+        comma separated as follows:
+    </p>
+    .read,
+    .unread {
+    color: white;
+    background-color: black;
+    }
+
+    .read {
+    /* several unique declarations */
+    }
+
+    .unread {
+    /* several unique declarations */
+    }
+
+    <p>Both examples will work and have the same result, but the second example reduces
+        repetition of declarations and makes it easier to edit both classes at once.
+    </p>
+
+    <h4>Chaining Selectors</h4>
+    &lt;div class="subsection header"&gt;Latest Posts&lt;/div&gt;
+    &lt;p class="subsection preview"&gt;This is where a preview for a post may go.&lt;/p&gt;
+
+    .subsection.header{
+        color: red;
+    }
+    <p>What .subsection.header does is it selects any element that has both subsection AND 
+        header classes. This syntax can be used to chain any combo of selectors, except Chaining
+        more than one Type Selector.
+    </p>
+
+    <p>You can chain classes and an ID, for example the preview selector where an ID selector:</p>
+    &lt;p class="subsection" id="preview"&gt;This is where a preview may go&lt;/p&gt;
+    
+    .subsection#preview{
+        color: blue;
+    }
+
+    <h4>Descendant Combinator</h4>
+    <p>Cominators allow us to combine selectors differently than grouping or chaining, and 
+        they show a relationship between selectors. There are 4 types of combinators, but 
+        for now we'll go into the Descendant Combinator.
+    </p>
+    <p>Descendant Combinator is represented as a single space between selectors. classes
+      are nested within eachother with the topmost class being the 'ancestor' and classes
+      neseted within the ancestor are called 'children'. For example:
+    </p>
+    <p>&lt;div class="ancestor"&gt;</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="child"&gt;</p>
+    <p>While the css would look like the following:</p>
+    .ancestor .child{
+        Some Declarations
+    }
+
+</body>
+</html>
